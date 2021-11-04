@@ -1,0 +1,38 @@
+{% extends "layout.html" %}
+
+{% block title %}
+    Quoted
+{% endblock %}
+
+{% block main %}
+
+    <main class="container p-5">
+
+    <table class="table table-striped">
+        <thead>
+            <tr>
+                <th>Symbol</th>
+                <th>Shares</th>
+                <th>Price</th>
+                <th>Transacted</th>
+            </tr>
+        </thead>
+        <tbody>
+
+            {% for tran in transaction %}
+                <tr>
+                    <td>{{ tran["symbol"] }}</td>
+                    <td>{{ tran["name"] }}</td>
+                    <td>{{ tran["shares"] }}</td>
+                    <td>{{ tran["price"] }}</td>
+                    <td>{{ tran["total"] }}</td>
+                    <td>{{ tran["transacted"] }}</td>
+                </tr>
+            {% endfor %}
+
+        </tbody>
+    </table>
+
+        </main>
+
+{% endblock %}

@@ -1,0 +1,41 @@
+{% extends "layout.html" %}
+
+{% block title %}
+    Home
+{% endblock %}
+
+{% block main %}
+
+<table class="table table-striped">
+        <thead>
+            <tr>
+                <th>Symbol</th>
+                <th>Name</th>
+                <th>Shares</th>
+                <th>Price</th>
+                <th>TOTAL</th>
+                <th>Time</th>
+            </tr>
+        </thead>
+        <tfoot>
+            <tr>
+                <td colspan="4"></td>
+                <td>{{  main_total }}</td>
+            </tr>
+        </tfoot>
+        <tbody>
+            {% for tran in transaction %}
+                <tr>
+                    <td>{{ tran["symbol"] }}</td>
+                    <td>{{ tran["name"] }}</td>
+                    <td>{{ tran["shares"] }}</td>
+                    <td>{{ tran["price"] }}</td>
+                    <td>{{ tran["total"] }}</td>
+                    <td>{{ tran["transacted"] }}</td>
+                </tr>
+            {% endfor %}
+            
+        </tbody>
+    </table>
+
+{% endblock %}
